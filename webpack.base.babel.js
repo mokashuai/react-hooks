@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 const ROOT = path.resolve(__dirname, 'src');
- 
+
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 const alias = [
 	'pages', 'components', 'actions', 'utils',
@@ -23,12 +23,15 @@ export default {
 	},
 	module: {
 		rules: [{
-			test: /jsx?/,
+			test: /\.jsx?$/,
 			exclude: /node_modules/,
 			include: ROOT,
 			use: [{
 				loader: 'babel-loader'
 			}]
+		}, {
+			test: /\.css$/,
+			use: ['style-loader', 'css-loader']
 		}]
 	},
 	plugins: [
