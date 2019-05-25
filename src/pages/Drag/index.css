@@ -1,0 +1,4 @@
+.draggable-container>div{
+	display: flex;
+	flex-wrap: wrap;
+}
